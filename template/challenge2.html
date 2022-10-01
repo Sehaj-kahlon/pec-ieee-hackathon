@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon</title>
+</head>
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkblue;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+
+  li {
+    float: left;
+    border-right: 1px solid yellow;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: yellow;
+  }
+
+  .active {
+    background-color: yellow;
+  }
+
+  .header {
+    margin-left: -56px;
+    margin-right: -5666px;
+    margin-top: -6566px;
+    margin-bottom: -100px;
+    height: 150px;
+    padding: 60px;
+    text-align: center;
+    background: url("/webapp/static/head_image.jpeg");
+    color: black;
+    font-size: 30px;
+    overflow: hidden;
+  }
+
+
+
+  #clockContainer {
+    position: relative;
+    margin: auto;
+    height: 8vw;
+    /*to make the height and width responsive/ width: 8vw;
+    background : url(clock_2.png) no-repeat;
+    setting our background image*/
+
+  }
+
+  #hour,
+  #minute,
+  #second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+  }
+
+  #hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+  }
+
+  #minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+  }
+
+  #second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+  }
+  body{
+    background-image: url("https://media.istockphoto.com/vectors/school-classroom-in-class-monochrome-material-for-comic-books-vector-id1291193777?k=20&m=1291193777&s=612x612&w=0&h=JjBorJikp3qI3Ayz7mMjNm9gC6T9B7fE8i4H5bCrfJg=");
+    overflow: hidden;
+    height: 100%;
+    background-color: rgb(228, 121, 228);
+    
+  }
+  .row{
+    text-align: center;
+  }
+</style>
+
+<body>
+  <!-- <img src="https://img.freepik.com/premium-vector/secondary-school-classroom-interior-cartoon-illustration-concept_88272-1371.jpg?w=2000" alt="#" style="width: 800px; padding-top: 50px;"> -->
+  <ul style="margin-left: -10px; width: 100%">
+    <li><a href="/index" target="_main">Home</a></li>
+    <li><a href="/tutorial" target="_main">Tutorial</a></li>
+    <li><a href="/contact" target="_main">Contact</a></li>
+    <li style="float: right;"><a href="#about">About</a></li>
+  </ul>
+  <div id="clockContainer" style="margin-left: 25px; top: 345px; left: 1378px;">
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+  </div>
+
+  <!-- <div class="header" style="margin-top: -131px;">  
+<h1 style="color:blue ; margin-top: 0.2px; text-align: center;">Dhoom Classes</h1>
+  </div> -->
+  <div style="margin-top: -131px; margin-left: 950px;">
+    <h1>DHOOM CLASSES</h1>
+    
+  </div>
+  <div class="col-md-12 col-sm-10 col-xs-10 vupdate">
+    <a href="/pec/default/allnotice"></a>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-5 trans-headcontent" style="margin-left: 700px; margin-top: 166px;">
+    <div class="row">
+      <div class="col-md-12">
+        <div id='user_validation_div' class="text-left alert alert-danger"
+          style="display:none;padding:5px;margin:0px;font-size:15px">
+          <strong id='user_validation_text'></strong>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-left: 300px;">
+      <div >
+        <div >
+          <div class="col-lg-12 col-xs-10">
+            <input id="pec_username" type="text" name="username" placeholder="User Name"
+              class="pec_textbox form-control" style="background:rgb(139, 145, 150)url(/pec/images/user_icon.png) no-repeat 2px;" />
+          </div>
+        </div>
+        <div class="row mar23" style="margin-left: -1012px;">
+          <div class="col-lg-12 col-xs-10">
+            <input id="pec_password" type="password" name="password" placeholder="Password"
+              class="pec_textbox form-control"
+              style="background:rgb(139, 145, 150) url(/pec/images/pass_icon.png) no-repeat 2px; margin-top: 10px;" />
+          </div>
+        </div>
+        <div class="row mar23">
+          <div class="col-lg-12 col-xs-10 selectdiv">
+            <select name='roleId' class="rolehome" id='roleId'
+              style='background:rgb(224, 190, 190) url(/pec/images/pro_icon.png) no-repeat 10px; margin-top: 10px;' placeholder='Role'>
+              <option value=''>You Are</option>
+              <option
+                value='KMl+txz7LYixuzURmCnvrGU2YmJlMzg0NTY5MDNmMWI4MDA3ZTNkZGRiMWQ3MDQxMGVlZTBmM2FmMWMwYjJmMTMxNTE1YjdhOTNjNTkxNmEs3XQBh7mQR6ZPOTn04PLHMFuC9ZEXb2JtJnCKuslbEg=='>
+                Student</option>
+              <option
+                value='eqJavU2+S0aOVtfFd/ggJDc1YzlkMjNhNWQyMjY4YTgyMzg5MTk0YmJiMGU4MTNiYmYzYThlN2Y0ZmYwMjJjNmY5MzQxN2RkMmMyNWRhMjKZLz755z0wZqILUk0OChApdH75s9pFKvluu7Jw/wkr9A=='>
+                Teacher</option>
+          </div>
+        </div>
+        <div class="row mar10">
+          <div class="row">
+            <div class="col-lg-12 col-xs-10 ">
+
+              <div class="marle50" style="margin-top: 5px;">
+
+                <a href="#" class="pec_forget_text" style="text-decoration: none; color: white;">Forgot
+                  password</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="row mar70">
+      <div>
+        <input id='signINValidate' alt="Login" value="Login"
+          style="margin-right: 100px; margin-top: 10px; width: 75px; margin-right: 900px; background-color: black; color: white;">
+      </div>
+      <br>
+    </div>
+  </div>
+  </div>
+  </div>
+  <button style="margin-left: 1000px; width: 180px; height: 50px; border-radius: 50px; color: red; margin-top: 50px;"><a
+      href="http://127.0.0.1:5500/login_page.html"></a> New User/Sign Up</button>
+
+</body>
+
+</html>
